@@ -1,0 +1,12 @@
+*.swp
+.swo
+jferris-*.gemspec
+*.scratch.*
+log/*.log
+log/searchd.*
+tmp/**/*
+db/*.db
+db/*.sqlite3
+.DS_Store
+doc/api
+doc/app
