@@ -24,3 +24,15 @@ github amerine/dotfiles $code/dotfiles
 
 ## Vim
 include vim.sh
+
+## Tools
+brew ack
+brew par
+brew tree
+brew watch
+brew nmap
+brew colordiff
+brew tarsnap
+brew curl
+brew mtr
+brew dnsmasq
