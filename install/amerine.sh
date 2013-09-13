@@ -10,6 +10,17 @@ brew git
 brew hub
 brew tig
 
+## Python
+## may require some fuckery when done.
+brew python
+
+## Vim
+## may require some fuckery when done.
+brew macvim --env-std --override-system-vim
+
 ## Files
 code=$HOME/code/amerine
 github amerine/dotfiles $code/dotfiles
+
+## Vim
+include vim.sh
