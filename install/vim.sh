@@ -27,11 +27,12 @@ github tpope/vim-fugitive
 
 ### Colors
 github chriskempson/vim-tomorrow-theme
+github vim-scripts/tango-morning.vim
 
 ### Powerline
 github Lokaltog/powerline
 
-### Syntax
+### Syntax & Language Specifics
 github pangloss/vim-javascript
 github tpope/vim-haml
 github groenewege/vim-less
@@ -44,5 +45,10 @@ github evanmiller/nginx-vim-syntax
 github nono/vim-handlebars
 github juvenn/mustache
 github vim-ruby/vim-ruby
+github tpope/vim-bundler
+github tpope/vim-rake
+github tpope/vim-rails
+github Shougo/vimproc.vim
+github Shougo/unite.vim
 
 unset_dir

@@ -89,7 +89,7 @@ execute pathogen#infect()
   set foldignore=        " don't try to be clever
 
   " Net-RW
-  let g:netrw_liststyle=4
+  let g:netrw_liststyle=3
 
   " Listchars
   if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
@@ -159,6 +159,16 @@ execute pathogen#infect()
   " C+L clears search
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
+  " Unite
+  nnoremap <C-p> :Unite -start-insert buffer file_rec/async<cr>
+  nnoremap <Leader>/ :Unite grep:.<cr>
+  nnoremap <Leader>b :Unite -quick-match buffer <CR>
+  nnoremap <Leader>h :Unite -start-insert help <CR>
+  nnoremap <Leader>t :Unite -start-insert tag <CR>
+  nnoremap <Leader>] :UniteWithCursorWord -quick-match tag <CR>
+  nnoremap <Leader>o :Unite outline <CR>
+  nnoremap <leader>m :<C-u>Unite file_mru<CR>
+
 " ===============
 " Auto Commands
 " ===============
@@ -167,9 +177,12 @@ execute pathogen#infect()
 " ===============
 " UI
 " ===============
-  set background=dark
+  set background=light
   set t_Co=256
-  colorscheme Tomorrow-Night
+  colorscheme tango-morning
+
+  " Set the cursorline to something a bit more tolerable.
+  hi CursorLine guibg=#dfdfdd
 
   if has("gui_running")
     set guifont=Sauce\ Code\ Powerline:h11
@@ -205,6 +218,7 @@ execute pathogen#infect()
   " syntastic
   let g:syntastic_check_on_open=1
   let g:syntastic_html_checkers = []
+  let g:syntastic_enable_highlighting=0
 
   " autoclose
   let g:AutoClosePreserveDotReg=0
