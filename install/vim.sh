@@ -1,56 +1,56 @@
-## Install vim.
-brew vim
+#use brew git github
 
-## Pathogen Bundles
-[ -z $code ] && code=$HOME/code/amerine
-set_dir $code/dotfiles/vim/bundle
+## Install vim.
+ok brew vim
+
+destination push $HOME/code/amerine/dotfiles/vim/bundle
 
 ### Bundle Basics
-github tpope/vim-pathogen
-github tpope/vim-endwise
-github tpope/vim-repeat
-github tpope/vim-surround
-github tpope/vim-ragtag
-github tpope/vim-unimpaired
-github tpope/vim-eunuch
-github ervandew/supertab
-github michaeljsmith/vim-indent-object
-github Townk/vim-autoclose
-github scrooloose/syntastic
-github tpope/vim-commentary
-github mattn/gist-vim
-github vim-scripts/taglist.vim
-github goldfeld/vim-seek
-github tpope/vim-vinegar
+ok github tpope/vim-pathogen
+ok github tpope/vim-endwise
+ok github tpope/vim-repeat
+ok github tpope/vim-surround
+ok github tpope/vim-ragtag
+ok github tpope/vim-unimpaired
+ok github tpope/vim-eunuch
+ok github ervandew/supertab
+ok github michaeljsmith/vim-indent-object
+ok github Townk/vim-autoclose
+ok github scrooloose/syntastic
+ok github tpope/vim-commentary
+ok github mattn/gist-vim
+ok github vim-scripts/taglist.vim
+ok github goldfeld/vim-seek
+ok github tpope/vim-vinegar
 
 ### Git
-github tpope/vim-git
-github tpope/vim-fugitive
-github mhinz/vim-signify
+ok github tpope/vim-git
+ok github tpope/vim-fugitive
+ok github mhinz/vim-signify
 
 ### Colors
-github chriskempson/vim-tomorrow-theme
-github vim-scripts/tango-morning.vim
-github reedes/vim-colors-pencil
+ok github chriskempson/vim-tomorrow-theme
+ok github vim-scripts/tango-morning.vim
+ok github reedes/vim-colors-pencil
 
 ### Powerline
-github Lokaltog/powerline
+ok github Lokaltog/powerline
 
 ### Syntax & Language Specifics
-github pangloss/vim-javascript
-github tpope/vim-haml
-github groenewege/vim-less
-github leshill/vim-json
-github tpope/vim-markdown
-github cespare/vim-toml
-github jnwhiteh/vim-golang
-github kchmck/vim-coffee-script
-github evanmiller/nginx-vim-syntax
-github nono/vim-handlebars
-github juvenn/mustache
-github vim-ruby/vim-ruby
-github tpope/vim-bundler
-github tpope/vim-rake
-github tpope/vim-rails
+ok github pangloss/vim-javascript
+ok github tpope/vim-haml
+ok github groenewege/vim-less
+ok github leshill/vim-json
+ok github tpope/vim-markdown
+ok github cespare/vim-toml
+ok github jnwhiteh/vim-golang
+ok github kchmck/vim-coffee-script
+ok github evanmiller/nginx-vim-syntax
+ok github nono/vim-handlebars
+ok github juvenn/mustache
+ok github vim-ruby/vim-ruby
+ok github tpope/vim-bundler
+ok github tpope/vim-rake
+ok github tpope/vim-rails
 
-unset_dir
+destination pop

@@ -1,38 +1,35 @@
 # heavy inspiration from github.com/mattly here.
+# use brew git github
 
 ## Basics
-brew readline
-brew bcrypt
-brew openssl
+ok brew readline
+ok brew bcrypt
+ok brew openssl
 
 ## Git
-brew git
-brew hub
-brew tig
+ok brew git
+ok brew hub
+ok brew tig
 
 ## Python
 ## may require some fuckery when done.
-brew python
+ok brew python
 
 ## Vim
 ## may require some fuckery when done.
-brew macvim --env-std --override-system-vim
-
-## Files
-code=$HOME/code/amerine
-github amerine/dotfiles $code/dotfiles
+ok brew macvim --env-std --override-system-vim
 
 ## Vim
 include vim.sh
 
 ## Tools
-brew ack
-brew par
-brew tree
-brew watch
-brew nmap
-brew colordiff
-brew tarsnap
-brew curl
-brew mtr
-brew dnsmasq
+ok brew ack
+ok brew par
+ok brew tree
+ok brew watch
+ok brew nmap
+ok brew colordiff
+ok brew tarsnap
+ok brew curl
+ok brew mtr
+ok brew dnsmasq
