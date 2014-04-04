@@ -176,7 +176,7 @@ execute pathogen#infect()
   " hi CursorLine guibg=#dfdfdd
 
   if has("gui_running")
-    set guifont=Sauce\ Code\ Powerline:h11
+    set guifont=Sauce\ Code\ Powerline:h12
     " a: visual-mode autoselect (takes over the OS selection process)
     " A: autoselect for modeless selection
     " c: use console dialogs for simple choices
