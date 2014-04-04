@@ -20,14 +20,18 @@ github scrooloose/syntastic
 github tpope/vim-commentary
 github mattn/gist-vim
 github vim-scripts/taglist.vim
+github goldfeld/vim-seek
+github tpope/vim-vinegar
 
 ### Git
 github tpope/vim-git
 github tpope/vim-fugitive
+github mhinz/vim-signify
 
 ### Colors
 github chriskempson/vim-tomorrow-theme
 github vim-scripts/tango-morning.vim
+github reedes/vim-colors-pencil
 
 ### Powerline
 github Lokaltog/powerline
@@ -48,7 +52,5 @@ github vim-ruby/vim-ruby
 github tpope/vim-bundler
 github tpope/vim-rake
 github tpope/vim-rails
-github Shougo/vimproc.vim
-github Shougo/unite.vim
 
 unset_dir

@@ -99,11 +99,11 @@ execute pathogen#infect()
   endif
 
   " Highlight the cursor line for the current window only
-  augroup CursorLine
-    au!
-    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
-  augroup END
+  " augroup CursorLine
+  "   au!
+  "   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  "   au WinLeave * setlocal noursorline
+  " augroup END
 
   " Mouse
   if has("mouse")
@@ -159,16 +159,6 @@ execute pathogen#infect()
   " C+L clears search
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
-  " Unite
-  nnoremap <C-p> :Unite -start-insert buffer file_rec/async<cr>
-  nnoremap <Leader>/ :Unite grep:.<cr>
-  nnoremap <Leader>b :Unite -quick-match buffer <CR>
-  nnoremap <Leader>h :Unite -start-insert help <CR>
-  nnoremap <Leader>t :Unite -start-insert tag <CR>
-  nnoremap <Leader>] :UniteWithCursorWord -quick-match tag <CR>
-  nnoremap <Leader>o :Unite outline <CR>
-  nnoremap <leader>m :<C-u>Unite file_mru<CR>
-
 " ===============
 " Auto Commands
 " ===============
@@ -182,7 +172,7 @@ execute pathogen#infect()
   colorscheme tango-morning
 
   " Set the cursorline to something a bit more tolerable.
-  hi CursorLine guibg=#dfdfdd
+  " hi CursorLine guibg=#dfdfdd
 
   if has("gui_running")
     set guifont=Sauce\ Code\ Powerline:h11
