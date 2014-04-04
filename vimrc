@@ -169,7 +169,8 @@ execute pathogen#infect()
 " ===============
   set background=light
   set t_Co=256
-  colorscheme tango-morning
+  " colorscheme tango-morning
+  colorscheme pencil
 
   " Set the cursorline to something a bit more tolerable.
   " hi CursorLine guibg=#dfdfdd
