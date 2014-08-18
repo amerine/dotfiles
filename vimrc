@@ -12,6 +12,14 @@ execute pathogen#infect()
   set wildmode=list:longest,full
   set wildignore+=*.png,*.jpg,*.gif,*.ai,*.jpeg,*.psd,*.swp,*.jar,*.zip,*.gem,.DS_Store,log/**,coverage/**
 
+  " Some Linux distributions set filetype in /etc/vimrc.
+  " Clear filetype flags before changing runtimepath to force Vim to reload them.
+  if exists("g:did_load_filetypes")
+    filetype off
+    filetype plugin indent off
+  endif
+  set runtimepath+=$GOROOT/misc/vim
+
   syntax on
   filetype plugin indent on
   set modelines=0
@@ -163,6 +171,7 @@ execute pathogen#infect()
 " Auto Commands
 " ===============
   autocmd QuickfixCmdPost grep copen
+  autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " ===============
 " UI
@@ -176,7 +185,7 @@ execute pathogen#infect()
   " hi CursorLine guibg=#dfdfdd
 
   if has("gui_running")
-    set guifont=Sauce\ Code\ Powerline:h12
+    set guifont=M+\ 1m\ for\ Powerline:h14
     " a: visual-mode autoselect (takes over the OS selection process)
     " A: autoselect for modeless selection
     " c: use console dialogs for simple choices
