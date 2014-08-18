@@ -67,11 +67,11 @@ execute pathogen#infect()
   set nowrap
   set softtabstop=2
   set shiftwidth=2
-  set tabstop=4
+  set tabstop=2
   set shiftround
   set expandtab
   set smarttab
-  set textwidth=80
+  set textwidth=120
   set colorcolumn=+1
   set formatoptions+=n1
 
