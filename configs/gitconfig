@@ -1,0 +1,49 @@
+[user]
+  name = Mark Turner
+  email = mark@amerine.net
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  ui = auto
+
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+  quotepath = off
+
+[alias]
+  age        = !echo "First commit:" && git log --reverse --pretty=format:'\t\t%ar' | head -n 1 && echo 'Last commit:' && git log --pretty=format:'\t\t%ar' | head -n 1
+  who        = !git log --format='%aN%n%cN' | sort | uniq
+  who-email  = !git log --format='%aN <%ae>%n%cN <%ce>' | sort | uniq
+  uncommit   = reset --soft HEAD^
+  lg         = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  timeline   = log --oneline --graph --decorate
+  co         = checkout
+  pend       = diff --cached
+  latest     = for-each-ref --count=20 --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
+  unstage    = reset HEAD
+  pushnotes  = !sh -c 'git push $1 refs/notes/*' -
+  fetchnotes = !sh -c 'git fetch $1 refs/notes/*:refs/notes/*' -
+
+[branch]
+  autosetupmerge = true
+
+[merge]
+  tool = opendiff
+
+[mergetool]
+  keepBackup = false
+
+[difftool]
+  prompt = false
+
+[push]
+  default = current
+
+[credential]
+    helper = osxkeychain
+
+[github]
+  user = amerine

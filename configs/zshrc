@@ -14,8 +14,8 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
-export EDITOR="mvim -f"
-export DEFAULT_USER="amerine"
+export EDITOR="vim"
+export DEFAULT_USER="mark.turner"
 
 export GOPATH=$HOME/mygo
 export GOROOT=$HOME/code/go
