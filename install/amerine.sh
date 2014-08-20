@@ -3,7 +3,7 @@ include osx.sh
 ## Homebrew
 ok brew
 
-## Dotfilesd
+## Dotfiles
 include dotfiles.sh
 
 ## Git
@@ -58,3 +58,13 @@ ok check "[ -e $HOME/.ssh/config ]"
 if check_failed; then
   echo "copy .ssh/config file from 1password"
 fi
+
+## Bin
+ok directory $HOME/bin
+destination $HOME/bin
+for app in $HOME/code/amerine/dotfiles/bin/*; do
+  ok symlink "$HOME/bin/$(basename $app)" $app
+done
+
+## go
+include go.sh
