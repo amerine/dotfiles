@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/mark.turner/code/amerine/dotfiles'
-let g:netrw_dirhist_2='/Users/mark.turner/code/amerine/dotfiles/configs'
-let g:netrw_dirhist_3='/Users/mark.turner/code/amerine/dotfiles/install'
-let g:netrw_dirhist_4='/Users/mark.turner/code/amerine/dotfiles'
