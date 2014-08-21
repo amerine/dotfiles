@@ -66,5 +66,8 @@ for app in $HOME/code/amerine/dotfiles/bin/*; do
   ok symlink "$HOME/bin/$(basename $app)" $app
 done
 
+## aliases
+ok directory $HOME/.aliases
+
 ## go
 include go.sh
