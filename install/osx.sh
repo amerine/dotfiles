@@ -14,3 +14,4 @@ ok defaults NSGlobalDomain AppleShowAllExtensions bool true
 # Docks Settings
 ok defaults com.apple.dock autohide bool true
 ok defaults com.apple.dock workspaces-swoosh-animation-off bool true
+ok defaults com.apple.dock orientation string right
