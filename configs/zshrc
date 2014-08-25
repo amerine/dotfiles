@@ -20,7 +20,7 @@ export DEFAULT_USER="mark.turner"
 export GOPATH=$HOME/mygo
 export GOROOT=$HOME/code/go
 export PATH=$PATH:$HOME/mygo/bin
-export PATH=/Users/amerine/code/go/bin:$PATH
+export PATH=$HOME/code/go/bin:$PATH
 export HISTSIZE=50000
 export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 
