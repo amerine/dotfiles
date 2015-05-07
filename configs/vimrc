@@ -84,7 +84,7 @@ execute pathogen#infect()
   set splitright
 
   " Searching
-  set grepprg=ack
+  set grepprg=pt\ --nogroup\ --nocolor
   set hlsearch
   set ignorecase
   set smartcase
@@ -122,7 +122,13 @@ execute pathogen#infect()
 " Key Bindings
 " ==============
   let mapleader=',' " set leader to ,
-  " leader mappings
+
+  " command mode
+  cnoremap w!! %!sudo tee > /dev/null %
+  cnoremap <C-h> <s-left>
+  cnoremap <C-l> <s-right>
+  cnoremap <C-a> <Home>
+  cnoremap <C-e> <End>
 
   " r   - regenerate tags
   map <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
@@ -138,6 +144,35 @@ execute pathogen#infect()
   nnoremap <Leader>sn ]s
   nnoremap <Leader>sp ]p
   nnoremap <Leader>s? z=
+  nnoremap <C-e> $
+  nnoremap <C-a> 0
+
+
+  function! s:MapNextFamily(map,cmd)
+    let map = '<Plug>unimpaired'.toupper(a:map)
+    let cmd = '".(v:count ? v:count : "")."'.a:cmd
+    let end = '"<CR>'.(a:cmd == 'l' || a:cmd == 'c' ? 'zv' : '')
+    execute 'nnoremap <silent> '.map.'Previous :<C-U>exe "'.cmd.'previous'.end
+    execute 'nnoremap <silent> '.map.'Next     :<C-U>exe "'.cmd.'next'.end
+    execute 'nnoremap <silent> '.map.'First    :<C-U>exe "'.cmd.'first'.end
+    execute 'nnoremap <silent> '.map.'Last     :<C-U>exe "'.cmd.'last'.end
+    execute 'nmap <silent> ['.        a:map .' '.map.'Previous'
+    execute 'nmap <silent> ]'.        a:map .' '.map.'Next'
+    execute 'nmap <silent> ['.toupper(a:map).' '.map.'First'
+    execute 'nmap <silent> ]'.toupper(a:map).' '.map.'Last'
+    if exists(':'.a:cmd.'nfile')
+      execute 'nnoremap <silent> '.map.'PFile :<C-U>exe "'.cmd.'pfile'.end
+      execute 'nnoremap <silent> '.map.'NFile :<C-U>exe "'.cmd.'nfile'.end
+      execute 'nmap <silent> [<C-'.a:map.'> '.map.'PFile'
+      execute 'nmap <silent> ]<C-'.a:map.'> '.map.'NFile'
+    endif
+  endfunction
+
+  call s:MapNextFamily('a','')
+  call s:MapNextFamily('b','b')
+  call s:MapNextFamily('l','l')
+  call s:MapNextFamily('q','c')
+  call s:MapNextFamily('t','t')
 
   " Trailing whitespace
   map <leader>s :%s/\s\+$//g<CR>
@@ -167,11 +202,33 @@ execute pathogen#infect()
   " C+L clears search
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
+  " yank to system clipboard
+  xnoremap <Leader>y "*y
+
+  " K: Grep word under cursor
+  nnoremap <silent> K :grep! <cword><CR><CR>
+
+  " plugins commands
+  nmap <F8> :TagbarToggle<CR>
+
 " ===============
 " Auto Commands
 " ===============
   autocmd QuickfixCmdPost grep copen
   autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+  au FileType go nmap <Leader>s <Plug>(go-implements)
+  au FileType go nmap <Leader>i <Plug>(go-info)
+  au FileType go nmap <Leader>gd <Plug>(go-doc)
+  au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+  au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+  au FileType go nmap <leader>r <Plug>(go-run)
+  au FileType go nmap <leader>b <Plug>(go-build)
+  au FileType go nmap <leader>t <Plug>(go-test)
+  au FileType go nmap <leader>c <Plug>(go-coverage)
+  au FileType go nmap <Leader>ds <Plug>(go-def-split)
+  au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+  au FileType go nmap <Leader>e <Plug>(go-rename)
 
 " ===============
 " UI
@@ -224,3 +281,11 @@ execute pathogen#infect()
   let g:AutoClosePreserveDotReg=0
   let g:AutoClosePairs_add = "'"
   let g:AutoCloseProtectedRegions = ["Comment", "String", "Character"]
+
+  " vim-go
+  let g:go_fmt_command = "goimports"
+
+  " ultisnips
+  let g:UltiSnipsExpandTrigger="<c-j>"
+  let g:UltiSnipsJumpForwardTrigger="<c-j>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-k>"
