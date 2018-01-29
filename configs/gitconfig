@@ -44,7 +44,7 @@
   default = current
 
 [credential]
-    helper = osxkeychain
+	helper = osxkeychain
 
 [github]
   user = amerine
