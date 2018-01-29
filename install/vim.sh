@@ -20,9 +20,8 @@ ok github tpope/vim-characterize
 # Insert
 ok github tpope/vim-endwise
 ok github Townk/vim-autoclose
+ok github ervandew/supertab
 ok github tpope/vim-surround
-ok github Valloric/YouCompleteMe
-ok github SirVer/ultisnips
 
 # text-objects
 ok github michaeljsmith/vim-indent-object
@@ -35,8 +34,8 @@ ok github tpope/vim-vinegar
 ok github tpope/vim-unimpaired
 ok github scrooloose/syntastic
 ok github mattn/gist-vim
+ok github vim-scripts/taglist.vim
 ok github goldfeld/vim-seek
-ok github majutsushi/tagbar
 
 ### Git
 ok github tpope/vim-git
@@ -72,7 +71,7 @@ ok github kchmck/vim-coffee-script
 ok github groenewege/vim-less
 
 #### go
-ok github fatih/vim-go
+ok github jnwhiteh/vim-golang
 
 #### ruby/rails
 ok github vim-ruby/vim-ruby

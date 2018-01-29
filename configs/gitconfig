@@ -1,6 +1,7 @@
 [user]
   name = Mark Turner
   email = mark@amerine.net
+	signingkey = 5751DA93F930E3E6
 
 [color]
   diff = auto
@@ -37,15 +38,13 @@
   keepBackup = false
 
 [difftool]
-  ; prompt = false
+  prompt = false
 
 [push]
   default = current
 
 [credential]
-    helper = osxkeychain
+	helper = osxkeychain
 
 [github]
   user = amerine
-[heroku]
-	account = work

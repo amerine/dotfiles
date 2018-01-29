@@ -40,7 +40,6 @@ ok brew tarsnap
 ok brew curl
 ok brew mtr
 ok brew dnsmasq
-ok brew the_silver_searcher
 
 ## httpie
 ok pip httpie
