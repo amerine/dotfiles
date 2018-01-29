@@ -1,6 +1,7 @@
 [user]
   name = Mark Turner
   email = mark@amerine.net
+	signingkey = 5751DA93F930E3E6
 
 [color]
   diff = auto
