@@ -1,2 +1,7 @@
 configs/vim/bundle
 configs/vim/.netrwhist
+configs/config/fish/fish_history
+configs/config/fish/fishd*
+configs/config/fish/generated_completions
+configs/config/hub
+configs/config/gcloud
