@@ -1,8 +1,8 @@
 " The .vimrc of Mark Turner <mark@amerine.net>
+"
 set nocompatible
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
-
 
 " =================
 " General
@@ -37,7 +37,7 @@ execute pathogen#infect()
 
   " Spelling
   hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
-  set spell spelllang=en_us  " When you need it, you need it.
+  set spell
 
   "SWAP & UNDO OPTIONS
   set directory=~/.vim/swapfiles,/var/tmp,/tmp,.
@@ -71,8 +71,6 @@ execute pathogen#infect()
   set shiftround
   set expandtab
   set smarttab
-  set textwidth=120
-  set colorcolumn=+1
   set formatoptions+=n1
 
   " Le Bells
@@ -215,7 +213,6 @@ execute pathogen#infect()
 " Auto Commands
 " ===============
   autocmd QuickfixCmdPost grep copen
-  autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
   au FileType go nmap <Leader>s <Plug>(go-implements)
   au FileType go nmap <Leader>i <Plug>(go-info)
@@ -226,9 +223,9 @@ execute pathogen#infect()
   au FileType go nmap <leader>b <Plug>(go-build)
   au FileType go nmap <leader>t <Plug>(go-test)
   au FileType go nmap <leader>c <Plug>(go-coverage)
+  au FileType go nmap <Leader>d <Plug>(go-def)
   au FileType go nmap <Leader>ds <Plug>(go-def-split)
   au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-  au FileType go nmap <Leader>e <Plug>(go-rename)
 
 " ===============
 " UI
@@ -237,6 +234,7 @@ execute pathogen#infect()
   set t_Co=256
   " colorscheme tango-morning
   colorscheme pencil
+  " colorscheme smyck
 
   " Set the cursorline to something a bit more tolerable.
   " hi CursorLine guibg=#dfdfdd
@@ -253,14 +251,19 @@ execute pathogen#infect()
     set fuoptions=maxvert,maxhorz
   endif
 
-  " Powerline
-  python from powerline.vim import setup as powerline_setup
-  python powerline_setup()
-  python del powerline_setup
+  " " Powerline
+  " python from powerline.vim import setup as powerline_setup
+  " python powerline_setup()
+  " python del powerline_setup
 
 " =============
 " Plugins
 " =============
+  " airline
+  let g:airline_powerline_fonts = 1
+  let g:airline_theme = 'wombat'
+  let g:airline#extensions#hunks#enabled = 0
+
   " matchit
   runtime macros/matchit.vim
 
@@ -276,6 +279,7 @@ execute pathogen#infect()
   let g:syntastic_check_on_open=1
   let g:syntastic_html_checkers = []
   let g:syntastic_enable_highlighting=0
+  let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
   " autoclose
   let g:AutoClosePreserveDotReg=0
@@ -284,6 +288,7 @@ execute pathogen#infect()
 
   " vim-go
   let g:go_fmt_command = "goimports"
+  let g:go_auto_type_info = 0
 
   " ultisnips
   let g:UltiSnipsExpandTrigger="<c-j>"

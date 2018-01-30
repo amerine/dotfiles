@@ -12,6 +12,7 @@
   excludesfile = ~/.gitignore
   autocrlf = input
   quotepath = off
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [alias]
   age        = !echo "First commit:" && git log --reverse --pretty=format:'\t\t%ar' | head -n 1 && echo 'Last commit:' && git log --pretty=format:'\t\t%ar' | head -n 1
@@ -21,16 +22,21 @@
   lg         = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   timeline   = log --oneline --graph --decorate
   co         = checkout
+  a          = add
+  st         = status
   pend       = diff --cached
   latest     = for-each-ref --count=20 --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
   unstage    = reset HEAD
   pushnotes  = !sh -c 'git push $1 refs/notes/*' -
   fetchnotes = !sh -c 'git fetch $1 refs/notes/*:refs/notes/*' -
+  stash-all  = stash save --include-untracked
 
 [branch]
   autosetupmerge = true
 
 [merge]
+  ff = only
+  conflictstyle = diff3
   tool = opendiff
 
 [mergetool]
@@ -47,5 +53,9 @@
 
 [github]
   user = amerine
-[heroku]
-	account = work
+
+[diff]
+  renameLimit = 2700
+
+[status]
+  showUntrackedFiles = all

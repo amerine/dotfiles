@@ -25,3 +25,7 @@ TAGS
 *.*~
 *.tmproj
 .bundle
+.vscode
+.eslintrc.js
+jsconfig.json
+cSpell.json
