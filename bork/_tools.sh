@@ -1,0 +1,10 @@
+ok brew ack
+ok brew par
+ok brew tree
+ok brew watch
+ok brew nmap
+ok brew colordiff
+ok brew tarsnap
+ok brew curl
+ok brew mtr
+ok brew dnsmasq
