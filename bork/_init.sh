@@ -34,4 +34,4 @@ fi
 ok brew fish
 register types/shells.sh
 ok shells /usr/local/bin/fish
-# did_install && chsh -s /usr/local/bin/fish
+did_install && chsh -s /usr/local/bin/fish
