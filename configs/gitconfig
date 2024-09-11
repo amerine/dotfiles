@@ -25,8 +25,6 @@
   pend       = diff --cached
   latest     = for-each-ref --count=20 --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
   unstage    = reset HEAD
-  pushnotes  = !sh -c 'git push $1 refs/notes/*' -
-  fetchnotes = !sh -c 'git fetch $1 refs/notes/*:refs/notes/*' -
 
 [branch]
   autosetupmerge = true
